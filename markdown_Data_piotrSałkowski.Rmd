@@ -117,10 +117,31 @@ summary(MyData)
 Wykresy
 
 ```{r}
+
+library(png)
+
+
+ima <- readPNG("C:\\ekipa.png")
+
+
 hist(x=MyData[,4],xlab = "Wynagrodzenie",ylab = "Czêstotliwoœæ",
-     main = "Histogram - Wynagrodzenie", col = rainbow(8))
+     main = "Histogram - Wynagrodzenie")
+
+lim <- par()
+rasterImage(ima, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
+grid()
+
 
 ```
+
+Fotografie
+
+
+```{r}
+image(volcano)
+
+```
+
 
 
 
